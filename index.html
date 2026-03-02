@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - 12 Circles Unified</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --bg-main: #30005a; 
+            --shape-orange: #f3b05a;
+            --text-white: #ffffff;
+        }
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: var(--bg-main);
+            overflow: hidden; 
+        }
+        .container {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        /* Sección Título */
+        #un {
+            width: 50%;
+            height: 100%;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .inter-headers {
+            color: var(--text-white);
+            text-transform: uppercase;
+        }
+        .title-large {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
+            line-height: 0.9;
+        }
+
+        /* Sección Derecha - Cuadrícula de 12 círculos (6x2) */
+        #dos {
+            width: 50%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            padding: 2vh 2vw;
+            gap: 12px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        /* Estilo de los Enlaces/Círculos */
+        .shape-link {
+            text-decoration: none;
+            background-color: var(--shape-orange);
+            border-radius: 50%;
+            height: 85%; 
+            aspect-ratio: 1 / 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Se mantiene la transición por si cambias el color, pero eliminamos el escalado */
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Estado Hover simplificado (solo cursor) */
+        .shape-link:hover {
+            /* Eliminados scale y filter para que no se agrande ni brille */
+            cursor: pointer;
+        }
+
+        .p-label {
+            font-weight: 700;
+            color: var(--bg-main);
+            font-size: clamp(0.7rem, 1.4vw, 1rem);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media only screen and (max-width: 768px) {
+            body { overflow-y: auto; }
+            .container { flex-direction: column; height: auto; min-height: 100vh; }
+            #un { width: 100%; height: 30vh; justify-content: center; padding: 20px; text-align: center; }
+            #dos { 
+                width: 100%; 
+                height: 70vh; 
+                padding: 20px; 
+            }
+            .shape-link { height: 75%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="un">
+            <header>
+                <h1 class="inter-headers title-large">PORTFOLIO</h1>
+            </header>
+        </div>
+
+        <div id="dos">
+            <a href="https://monicaangelperez.github.io/p1/" class="shape-link"><span class="p-label">P1</span></a>
+            <a href="https://monicaangelperez.github.io/p2/" class="shape-link"><span class="p-label">P2</span></a>
+            
+            <a href="https://monicaangelperez.github.io/p3/" class="shape-link"><span class="p-label">P3</span></a>
+            <a href="https://monicaangelperez.github.io/p4/" class="shape-link"><span class="p-label">P4</span></a>
+            
+            <a href="https://monicaangelperez.github.io/p5/pages/monica.html" class="shape-link"><span class="p-label">P5</span></a>
+            <a href="https://monicaangelperez.github.io/p5_2/" class="shape-link"><span class="p-label">P5.2</span></a>
+            
+            <a href="https://monicaangelperez.github.io/p6/" class="shape-link"><span class="p-label">P6</span></a>
+            <a href="#" class="shape-link"><span class="p-label">P7</span></a>
+            
+            <a href="img/scunaa-7776.pdf" class="shape-link"><span class="p-label">P8</span></a>
+            <a href="https://monicaangelperez.github.io/p9-calendari-/" class="shape-link"><span class="p-label">P9</span></a>
+            
+            <a href="https://www.figma.com/design/3mfeAV5aDQei234FavG6RI/formageda?m=auto&t=QaQlwMOmnW6L8vyE-1" class="shape-link"><span class="p-label">P10</span></a>
+            <a href="https://www.figma.com/design/sCt76oLXyauk4s3KM95dF2/p11?m=auto&t=KnNCS05ZPaYrvDqP-1" class="shape-link"><span class="p-label">P11</span></a>
+        </div>
+    </div>
+</body>
+</html>
